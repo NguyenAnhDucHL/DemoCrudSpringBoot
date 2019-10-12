@@ -1,0 +1,68 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema demo_db
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema demo_db
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `demo_db` DEFAULT CHARACTER SET utf8 ;
+USE `demo_db` ;
+
+-- -----------------------------------------------------
+-- Table `demo_db`.`setting`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `demo_db`.`setting` (
+  `setting_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `group_value` VARCHAR(255) NULL DEFAULT NULL,
+  `setting_name` VARCHAR(255) NULL DEFAULT NULL,
+  `setting_desc` VARCHAR(255) NULL DEFAULT NULL,
+  PRIMARY KEY (`setting_id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `demo_db`.`user`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `demo_db`.`user` (
+  `user_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `full_name` VARCHAR(45) NULL DEFAULT NULL,
+  `email` VARCHAR(255) NULL DEFAULT NULL,
+  `mobile` VARCHAR(45) NULL DEFAULT NULL,
+  `title` VARCHAR(255) NULL DEFAULT NULL,
+  `from` VARCHAR(255) NULL DEFAULT NULL,
+  `position` VARCHAR(255) NULL DEFAULT NULL,
+  `mail_reg` VARCHAR(255) NULL DEFAULT NULL,
+  `picture` VARCHAR(255) NULL DEFAULT NULL,
+  PRIMARY KEY (`user_id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 4
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `demo_db`.`use_role`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `demo_db`.`use_role` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `user_user_id` INT(11) NOT NULL,
+  `role_name` VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_use_role_user_idx` (`user_user_id` ASC) VISIBLE,
+  CONSTRAINT `fk_use_role_user`
+    FOREIGN KEY (`user_user_id`)
+    REFERENCES `demo_db`.`user` (`user_id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 6
+DEFAULT CHARACTER SET = utf8;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
