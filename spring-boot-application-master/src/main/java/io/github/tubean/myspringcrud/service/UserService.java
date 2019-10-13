@@ -1,10 +1,9 @@
 package io.github.tubean.myspringcrud.service;
 
-import io.github.tubean.myspringcrud.entity.Role;
-import io.github.tubean.myspringcrud.entity.User;
-
 import java.util.List;
 import java.util.Optional;
+
+import io.github.tubean.myspringcrud.entity.User;
 
 public interface UserService {
   List<User> getAllUser();

@@ -1,12 +1,8 @@
 package io.github.tubean.myspringcrud.controller;
 
-import io.github.tubean.myspringcrud.entity.Role;
-import io.github.tubean.myspringcrud.entity.User;
-import io.github.tubean.myspringcrud.model.Object;
-import io.github.tubean.myspringcrud.repository.RoleRepository;
-import io.github.tubean.myspringcrud.service.ObjectService;
-import io.github.tubean.myspringcrud.service.RoleService;
-import io.github.tubean.myspringcrud.service.UserService;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,8 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
-import java.util.Optional;
+import io.github.tubean.myspringcrud.entity.User;
+import io.github.tubean.myspringcrud.repository.UserRepository;
+import io.github.tubean.myspringcrud.service.UserService;
 
 @Controller
 public class UserController {
@@ -27,7 +24,9 @@ public class UserController {
 
     @RequestMapping("/")
     public String index(Model model) {
-
+    	List<User> users = userService.getAllUser();
+    	
+    	model.addAttribute("users", users);
         return "index";
     }
 
