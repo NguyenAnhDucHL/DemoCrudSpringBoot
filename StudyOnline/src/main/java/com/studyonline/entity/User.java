@@ -32,7 +32,7 @@ public class User {
     @Column(name = "picture")
     private String picture;
 
-    @ManyToOne
+    @OneToMany
     private List<Role> roles;
 
     public User() {
