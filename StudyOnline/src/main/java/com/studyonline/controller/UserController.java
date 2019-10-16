@@ -6,6 +6,9 @@ import com.studyonline.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -26,6 +29,12 @@ public class UserController {
     }
 
 
+    @GetMapping("/block-user/{userId}")
+    public String blockUser(Model model, @PathVariable("userId") int id) {
+    	userService.blockUser(id);
+    	
+    	return "redirect:/user-list";
+    }
 //        @GetMapping(path = "/user-list")
 //        public JSONObject userList() {
 //        return new JSONObject("{'id':'abc' }");

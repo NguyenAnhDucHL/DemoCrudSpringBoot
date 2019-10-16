@@ -43,8 +43,10 @@
                                 <td><span th:each="rool :${user.roles}" th:text="${rool.role_name+', '}"></span></td>
                                 <td th:text="${user.last_login}"></td>
                                 <td th:if="${user.stt == true}">Active</td>
-                                <td th:unless="${user.stt == true}">InActive</td>
-                                <td><a href="user-details"><u>Edit</u></a><a class="link-space-left-20" href="#"><u>Block</u></a> </td>
+                                <td th:unless="${user.stt == true}">Blocked</td>
+                                <td><a href="user-details"><u>Edit</u></a>
+                                	<a class="link-space-left-20" th:if="${user.stt == true}" th:href="${'block-user/' + user.user_id}"><u>Block</u></a>
+                            		<a class="link-space-left-20" th:unless="${user.stt == true}" ><u>Unblock</u></a> </td>
                             </tr>
                             </tbody>
                         </table>
