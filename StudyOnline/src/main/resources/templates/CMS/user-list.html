@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="en"
+<html xmlns:th="http://www.springframework.org/schema/data/jaxb" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="en"
       layout:decorate="template">
 <body>
 <div layout:fragment="content" class="content-wrapper">
@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="box">
-                    <a class="link" href="user-details.html">Add New</a>
+                    <a class="link" th:href="@{/user-details}">Add New</a>
                     <!-- /.box-header -->
                     <div class="box-body">
                         <table id="tb_user example1" class="table table-bordered table-striped">
@@ -50,6 +50,7 @@
                             </tr>
                             </tbody>
                         </table>
+                        <div class="row"><div class="col-sm-5"><div class="dataTables_info" id="example1_info" role="status" aria-live="polite">Showing 1 to 10 of 10 entries</div></div><div class="col-sm-7"><div class="dataTables_paginate paging_simple_numbers" id="example1_paginate"><ul class="pagination"><li class="paginate_button previous disabled" id="example1_previous"><a href="#" aria-controls="example1" data-dt-idx="0" tabindex="0">Previous</a></li><li class="paginate_button active"><a href="#" aria-controls="example1" data-dt-idx="1" tabindex="0">1</a></li><li class="paginate_button next disabled" id="example1_next"><a href="#" aria-controls="example1" data-dt-idx="2" tabindex="0">Next</a></li></ul></div></div></div>
                         <div class="spinner-border text-primary" role="status">
                             <span class="sr-only">Loading...</span>
                         </div>
