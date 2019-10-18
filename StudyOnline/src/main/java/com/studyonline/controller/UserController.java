@@ -6,12 +6,10 @@ import com.studyonline.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Controller
@@ -28,24 +26,37 @@ public class UserController {
         return "CMS/user-list";
     }
 
+    @RequestMapping("/user-details")
+    public String addUser(Model model)
+    {
+       model.addAttribute("user", new User());
+       return "CMS/user-details";
+    }
 
     @GetMapping("/block-user/{userId}")
     public String blockUser(Model model, @PathVariable("userId") int id) {
-    	userService.blockUser(id);
-    	
-    	return "redirect:/user-list";
+        userService.blockUser(id);
+
+        return "redirect:/user-list";
     }
+
+    @RequestMapping(value = "save", method = RequestMethod.POST)
+    public String save(User user) {
+        userService.saveUser(user);
+        return "redirect:/user-list";
+    }
+
+    @RequestMapping(value = "/edit", method = RequestMethod.GET)
+    public String editUser(@RequestParam("id") Integer userId, Model model) {
+        Optional<User> userEdit = userService.findUserById(userId);
+        userEdit.ifPresent(user -> model.addAttribute("user", user));
+        return "CMS/user-details";
+    }
+
 //        @GetMapping(path = "/user-list")
 //        public JSONObject userList() {
 //        return new JSONObject("{'id':'abc' }");
 //    }
-    @RequestMapping("/user-details")
-    public String userDetails() {
-
-        return "CMS/user-details";
-    }
-
-
     @RequestMapping("/post-list")
     public String postList(){
 
