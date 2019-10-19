@@ -40,7 +40,19 @@ public class User {
     @Column(name = "picture")
     private String picture;
 
-    private MultipartFile[] fileDatas;
+    @Lob
+    @Column(name="image")
+    private byte[] image;
+    
+    public byte[] getImage() {
+		return image;
+	}
+
+	public void setImage(byte[] image) {
+		this.image = image;
+	}
+
+	private MultipartFile[] fileDatas;
 
     public MultipartFile[] getFileDatas() {
         return fileDatas;

@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -25,6 +26,18 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @PostMapping("/saveUser")
+    public String saveUser(Model model, @ModelAttribute("user")User user, @RequestParam("avatar")MultipartFile avatar) {
+    	try {
+			user.setImage(avatar.getBytes());
+			userService.saveUser(user);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	return "redirect:/user-list";
+    }
+    
     @RequestMapping("/user-list")
     public String userList(Model model){
         List<User> users = userService.getAllUser();
@@ -105,7 +118,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "save", method = RequestMethod.POST)
-    public String save(User user) {
+    public String save(Model model, User user) {
         userService.saveUser(user);
         return "redirect:/user-list";
     }
