@@ -107,7 +107,9 @@
                                 </div>
                             </div>
                             <div class="tab-pane tab-image" id="photo">
-                                <img class="img-responsive pad" th:src="*{'data:image/jpg;base64,'+image}" alt="Photo">
+<!--                                <img class="img-responsive pad" th:src="*{'data:image/jpg;base64,'+${encodedString}}" alt="Photo">-->
+                                <img class="img-responsive pad" th:if="*{image != null}" th:src="@{'data:image/jpg;base64,' + *{T(org.springframework.util.Base64Utils).encodeToString(image)}}"/>
+                                <img class="img-responsive pad" th:unless="*{image != null}" th:src="@{image/empty_image.png}"/>
                                 <div class="row tab-button">
                                     <div class="form-group col-sm-5 col-sm-push-7">
                                         <label for="exampleChange">Add/Change image</label>
