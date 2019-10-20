@@ -47,8 +47,10 @@ public class UserServiceImpl implements UserService {
         try {
             entityTransaction.begin();
             user = em.find(User.class, id);
-            if(user != null) {
+            if(user.isStt() == true) {
                 user.setStt(false);
+            }else{
+                user.setStt(true);
             }
             em.merge(user);
 
