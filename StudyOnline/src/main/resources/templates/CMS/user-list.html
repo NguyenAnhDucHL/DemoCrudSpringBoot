@@ -70,55 +70,6 @@
 </div>
 </body>
 </html>
-<!--<script>-->
-
-<!--    $(document).ready(function () {-->
-<!--        $('#tb_user').DataTable({-->
-<!--            "ajax": {-->
-<!--                "url": "UserController/userList",-->
-<!--                "dataType": "json",-->
-<!--            },-->
-<!--            "columns": [-->
-<!--                {-->
-<!--                    "data": "user_id", "name": "ID"-->
-<!--                },-->
-<!--                {-->
-<!--                    "data": "full_name", "name": "Name"-->
-<!--                },-->
-<!--                {-->
-<!--                    "data": "email", "name": "Email"-->
-<!--                },-->
-<!--                {-->
-<!--                    "data": "mobile", "name": "Mobile"-->
-<!--                },-->
-<!--                {-->
-<!--                    "data": "roles", "name": "Roles"-->
-<!--                },-->
-<!--                {-->
-<!--                    "data": "last_login", "name": "Last Login"-->
-<!--                },-->
-<!--                {-->
-<!--                    "data": "stt", "name": "Status", "render": function (data) {-->
-<!--                        if (data == 1) {-->
-<!--                            return "Active"-->
-<!--                        } else {-->
-<!--                            return "Inactive"-->
-<!--                        }-->
-<!--                    }-->
-<!--                },-->
-<!--                {-->
-<!--                    "data": "user_id", "name": "Action", "render": function (data, type, row, meta) {-->
-<!--                        if (row["status"] === "1") {-->
-<!--                            return "<a href=''>Edit</a><a href=''>Block</a>"-->
-<!--                        } else {-->
-<!--                            return "<a href=''>Edit</a><a href=''>Unblock</a>"-->
-<!--                        }-->
-<!--                    }-->
-<!--                },-->
-<!--            ]-->
-<!--        });-->
-<!--    });-->
-<!--</script>-->
 <script>
     $(function () {
         $("#example1").DataTable();
