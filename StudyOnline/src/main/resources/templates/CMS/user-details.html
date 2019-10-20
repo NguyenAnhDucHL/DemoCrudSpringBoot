@@ -25,8 +25,8 @@
                     </ul>
                     <div class="tab-content">
                         <div class="active tab-pane" id="profile">
-                            <form class="form-horizontal" th:object="${user}" th:action="@{save}" action="#"
-                                  method="post">
+                            <form class="form-horizontal" th:object="${user}" th:action="@{saveUser}"
+                                  method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="inputname" class="col-sm-2 control-label">Full_name</label>
 
@@ -105,6 +105,13 @@
                                         </select>
                                     </div>
                                 </div>
+                                
+                                <div class="form-group">
+                                	<label class="col-sm-2 control-label">Avatar</label>
+                                	<div class="col-sm-4">
+                                		<input name="avatar" type="file"/>
+                                	</div>
+                                </div>
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
                                         <button type="submit" class="btn btn-danger">Submit</button>
@@ -112,10 +119,10 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="tab-pane tab-image" id="photo">
+                        <!-- <div class="tab-pane tab-image" id="photo">
                         <form th:object="${myUploadForm}" method="POST"
                               action="" enctype="multipart/form-data">
-                            <img class="img-responsive pad" th:src="@{}" alt="Photo">
+                            <img class="img-responsive pad" th:src="" alt="Photo">
                             <div class="row tab-button">
                                 <div class="form-group col-sm-5 col-sm-push-7">
                                     <label for="exampleChange">Add/Change image</label>
@@ -128,7 +135,7 @@
                                 </div>
                             </div>
                         </form>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
