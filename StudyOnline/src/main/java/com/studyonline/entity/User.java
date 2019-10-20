@@ -3,11 +3,12 @@ package com.studyonline.entity;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name = "user")
-public class User {
+public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")

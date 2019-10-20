@@ -2,8 +2,11 @@ package com.studyonline.controller;
 
 
 import com.studyonline.entity.User;
+import com.studyonline.repository.UserRepository;
 import com.studyonline.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -25,10 +28,12 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+
     @RequestMapping("/user-list")
-    public String userList(Model model){
-        List<User> users = userService.getAllUser();
-        model.addAttribute("user_list",users);
+    public String userList(Model model,  @RequestParam(name = "page", required = false, defaultValue = "0") Integer page,
+                           @RequestParam(name = "size", required = false, defaultValue = "5") Integer size){
+        Pageable pageable = PageRequest.of(page,size);
+        model.addAttribute("user_list",userService.findUser(pageable));
         return "CMS/user-list";
     }
 

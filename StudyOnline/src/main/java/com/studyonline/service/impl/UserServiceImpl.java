@@ -4,6 +4,8 @@ import com.studyonline.entity.User;
 import com.studyonline.repository.UserRepository;
 import com.studyonline.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
@@ -61,5 +63,10 @@ public class UserServiceImpl implements UserService {
             em.close();
         }
         return user;
+    }
+
+    @Override
+    public Page<User> findUser(Pageable pageable) {
+        return userRepository.findUser(pageable);
     }
 }
