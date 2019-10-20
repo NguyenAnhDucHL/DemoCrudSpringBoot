@@ -35,6 +35,17 @@ public class User implements Serializable {
     @Column(name = "gender")
     private boolean gender;
 
+    @Column(name = "position")
+    private String position;
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
     @Column(name = "stt")
     private boolean stt;
 
