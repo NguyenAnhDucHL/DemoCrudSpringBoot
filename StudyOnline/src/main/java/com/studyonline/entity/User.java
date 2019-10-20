@@ -53,16 +53,6 @@ public class User implements Serializable {
 		this.image = image;
 	}
 
-	private MultipartFile[] fileDatas;
-
-    public MultipartFile[] getFileDatas() {
-        return fileDatas;
-    }
-
-    public void setFileDatas(MultipartFile[] fileDatas) {
-        this.fileDatas = fileDatas;
-    }
-
     @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
@@ -71,7 +61,7 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(String full_name, String email, String mobile, String dob, String last_login, String from, boolean gender, boolean stt, String picture, MultipartFile[] fileDatas, List<Role> roles) {
+    public User(String full_name, String email, String mobile, String dob, String last_login, String from, boolean gender, boolean stt, String picture, List<Role> roles) {
         this.full_name = full_name;
         this.email = email;
         this.mobile = mobile;
@@ -81,7 +71,6 @@ public class User implements Serializable {
         this.gender = gender;
         this.stt = stt;
         this.picture = picture;
-        this.fileDatas = fileDatas;
         this.roles = roles;
     }
 

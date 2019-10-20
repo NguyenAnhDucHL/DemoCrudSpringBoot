@@ -18,15 +18,14 @@
     <section class="content">
         <div class="row">
             <div class="col-md-9">
-                <div class="nav-tabs-custom">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a href="#profile" data-toggle="tab">Profile</a></li>
-                        <li><a href="#photo" data-toggle="tab">Photo</a></li>
-                    </ul>
-                    <div class="tab-content">
-                        <div class="active tab-pane" id="profile">
-                            <form class="form-horizontal" th:object="${user}" th:action="@{saveUser}"
-                                  method="post" enctype="multipart/form-data">
+                <form class="form-horizontal" th:object="${user}" th:action="@{saveUser}" method="post" enctype="multipart/form-data">
+                    <div class="nav-tabs-custom">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#profile" data-toggle="tab">Profile</a></li>
+                            <li><a href="#photo" data-toggle="tab">Photo</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="active tab-pane" id="profile">
                                 <div class="form-group">
                                     <label for="inputname" class="col-sm-2 control-label">Full_name</label>
 
@@ -105,39 +104,24 @@
                                         </select>
                                     </div>
                                 </div>
-                                
-                                <div class="form-group">
-                                	<label class="col-sm-2 control-label">Avatar</label>
-                                	<div class="col-sm-4">
-                                		<input name="avatar" type="file"/>
-                                	</div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" class="btn btn-danger">Submit</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <!-- <div class="tab-pane tab-image" id="photo">
-                        <form th:object="${myUploadForm}" method="POST"
-                              action="" enctype="multipart/form-data">
-                            <img class="img-responsive pad" th:src="" alt="Photo">
-                            <div class="row tab-button">
-                                <div class="form-group col-sm-5 col-sm-push-7">
-                                    <label for="exampleChange">Add/Change image</label>
-                                    <input class="custom-input" type="file" id="exampleChange">
-                                </div>
-                                <div class="form-group col-sm-7 col-sm-pull-5">
-                                    <div class="col-sm-offset-1">
-                                        <button type="submit" class="btn btn-danger">Submit</button>
+                            </div>
+                            <div class="tab-pane tab-image" id="photo">
+                                <img class="img-responsive pad" th:src="@{image}" alt="Photo">
+                                <div class="row tab-button">
+                                    <div class="form-group col-sm-5 col-sm-push-7">
+                                        <label for="exampleChange">Add/Change image</label>
+                                        <input class="custom-input" type="file" id="exampleChange" name = "avatar"/>
                                     </div>
                                 </div>
                             </div>
-                        </form>
-                        </div> -->
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-danger">Submit</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </section>
