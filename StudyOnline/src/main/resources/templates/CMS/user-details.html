@@ -19,6 +19,7 @@
         <div class="row">
             <div class="col-md-9">
                 <form class="form-horizontal" th:object="${user}" th:action="@{saveUser}" method="post" enctype="multipart/form-data">
+                    <input type="hidden" th:field="*{user_id}">
                     <div class="nav-tabs-custom">
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#profile" data-toggle="tab">Profile</a></li>
@@ -106,7 +107,7 @@
                                 </div>
                             </div>
                             <div class="tab-pane tab-image" id="photo">
-                                <img class="img-responsive pad" th:src="@{image}" alt="Photo">
+                                <img class="img-responsive pad" th:src="*{'data:image/jpg;base64,'+image}" alt="Photo">
                                 <div class="row tab-button">
                                     <div class="form-group col-sm-5 col-sm-push-7">
                                         <label for="exampleChange">Add/Change image</label>
