@@ -14,6 +14,5 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<User, Integer> {
     List<User> findAll();
 
-    @Query(value="SELECT u FROM User u")
-    Page<User> findUser(Pageable pageable);
+
 }
