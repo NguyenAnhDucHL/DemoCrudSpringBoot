@@ -359,7 +359,7 @@ namespace CourseOnline.Controllers
             var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync();
             //if (loginInfo == null)
             //{
-                return RedirectToAction("Login");
+                return View("/Views/CMS/Home.cshtml");
             //}
 
             // Sign in the user with this external login provider if the user already has a login

@@ -62,3 +62,11 @@ F:\New folder (5)\C#\MvcPWy\obj\Debug\CourseOnline.csproj.CoreCompileInputs.cach
 F:\New folder (5)\C#\MvcPWy\obj\Debug\CourseOnline.csproj.CopyComplete
 F:\New folder (5)\C#\MvcPWy\obj\Debug\MvcPWy.dll
 F:\New folder (5)\C#\MvcPWy\obj\Debug\MvcPWy.pdb
+E:\DemoCrud\C#\MvcPWy\obj\Debug\CourseOnline.csproj.CoreCompileInputs.cache
+E:\DemoCrud\C#\MvcPWy\obj\Debug\MvcPWy.dll
+E:\DemoCrud\C#\MvcPWy\obj\Debug\MvcPWy.pdb
+E:\DemoCrud\C#\MvcPWy\bin\MvcPWy.dll.config
+E:\DemoCrud\C#\MvcPWy\bin\MvcPWy.dll
+E:\DemoCrud\C#\MvcPWy\bin\MvcPWy.pdb
+E:\DemoCrud\C#\MvcPWy\bin\System.Linq.Dynamic.dll
+E:\DemoCrud\C#\MvcPWy\obj\Debug\CourseOnline.csproj.CopyComplete
