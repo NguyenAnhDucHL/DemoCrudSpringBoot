@@ -29,4 +29,13 @@ public ActionResult Contact()
    return View();
 }
    }
+    public class HomeController : Controller
+    {
+        // GET: Home
+        
+        public ActionResult Index()
+        {
+            return View("/Views/CMS/Home.cshtml");
+        }
+    }
 }
