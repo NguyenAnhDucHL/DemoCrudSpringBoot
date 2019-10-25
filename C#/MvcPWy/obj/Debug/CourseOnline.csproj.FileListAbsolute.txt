@@ -70,3 +70,4 @@ E:\DemoCrud\C#\MvcPWy\bin\MvcPWy.dll
 E:\DemoCrud\C#\MvcPWy\bin\MvcPWy.pdb
 E:\DemoCrud\C#\MvcPWy\bin\System.Linq.Dynamic.dll
 E:\DemoCrud\C#\MvcPWy\obj\Debug\CourseOnline.csproj.CopyComplete
+E:\DemoCrud\C#\MvcPWy\obj\Debug\CourseOnline.csprojAssemblyReference.cache
