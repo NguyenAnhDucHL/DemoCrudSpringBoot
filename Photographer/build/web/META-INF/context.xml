@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/Photographer">
+  <Environment name="UrlConnection" type="java.lang.String" value="jdbc:sqlserver://DESKTOP-SFKRCDT\NGUYENANHDUC;databaseName=Photographer"/>
+  <Environment name="UserName" type="java.lang.String" value="sa"/>
+  <Environment name="Password" type="java.lang.String" value="fsoft@12345"/>
+  <Environment name="ImagePath" type="java.lang.String" value="Image/"/>
+</Context>
